@@ -32,5 +32,20 @@ export function initDatabase() {
             km INTEGER NOT NULL,
             recorded_at TEXT NOT NULL,
             FOREIGN KEY (vehicule_id) REFERENCES vehicules(id) ON DELETE CASCADE
+        ); 
+
+    CREATE TABLE IF NOT EXISTES maintenance_history (
+            id TEXT PRIMARY KEY, 
+            vehicule_id TEXT NOT NULL, 
+            maintenance_type_id TEXT NOT NULL, 
+            km_at_service INTEGER NOT NULL,
+            service_date TEXT NOT NULL, 
+            notes TEXT, 
+            cost REAL, 
+            FOREIGN KEY (vehicule_id) REFERENCES vehicules(id) ON DELETE CASCADE,
+            FOREIGN KEY (maintenance_type_id) REFERENCES maintenance-types(id) ON DELETE CASCADE    
         );
+    `);   
 }
+
+export default db;
