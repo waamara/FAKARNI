@@ -13,5 +13,16 @@ export function initDatabase() {
             created_at TEXT NOT NULL 
         ); 
     
-    
+    CRETE TABLE IF NOT EXISTS maintenance_types (  
+            id TEXT PRIMARY KEY, 
+            vehicule_id TEXT NOT NULL, 
+            name TEXT NOT NULL, 
+            icon TEXT, 
+            interval_km INTEGER NOT NULL, 
+            alert_before_km INTEGER NOT NULL DEFAULT 500, 
+            last_service_km INTEGER NOT NULL DEFAULT 0,
+            last_service_date TEXT, 
+            is_custom INTEGER DEFAULT 0,
+            FOREIGN KEY (vehicule_id) REFERENCES vehicules(id) ON DELETE CASCADE
+        );
 }
