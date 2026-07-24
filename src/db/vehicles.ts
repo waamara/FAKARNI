@@ -1,7 +1,7 @@
 import { brand } from 'expo-device';
 import db from './database'; 
 
-export interface vehicle {
+export interface Vehicle {
     id: string;
     name: string;
     brand?: string;
@@ -20,7 +20,7 @@ export function createVehicle(data: {
     brand?: string; 
     model?: string;
     year?: number;  
-}): Vehicule {
+}): Vehicle {
     const vehicle: Vehicle = {
         id: generateID(), 
         name: data.name,
@@ -31,5 +31,6 @@ export function createVehicle(data: {
         created_at: new Date().toISOString(), 
     }; 
 
-    
+    db.
 }
+
