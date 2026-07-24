@@ -31,6 +31,12 @@ export function createVehicle(data: {
         created_at: new Date().toISOString(), 
     }; 
 
-    db.
+    db.runSync(
+        `INSERT INTO vehicles (id, name, brand, model, year, current_km, created_at) 
+        VALUES (?, ?, ?, ?, ?, ?, ?)`,
+        [vehicle.id, vehicle.name, vehicle.brand ?? null, vehicle.model ?? null, vehicle.year ?? null, vehicle.current_km, vehicle.created_at]         
+    );
+
+    return vehicle;
 }
 
