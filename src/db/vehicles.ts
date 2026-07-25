@@ -40,5 +40,9 @@ export function createVehicle(data: {
     return vehicle;
 }
 
-// recuperation des vehicules
+// recuperation des vehicules 
+
+export function getALLVehicles(): Vehicle[] {
+    return db.getAllAsync<Vehicle>('SELECT * FROM vehicles ORDER BY created_at DESC'); 
+}
 
