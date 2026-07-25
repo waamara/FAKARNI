@@ -47,7 +47,10 @@ export function getALLVehicles(): Vehicle[] {
 
 // recuperation des vehicules par leur id 
 
-export function getVehicleByid(id: string, newKm: number):Vehicle | null
+export function getVehicleByid(id: string, newKm: number):Vehicle | null {
+    const result = db.getFirstSync<Vehicle>('SELECT * FROM vehicles WHERE id = ?', [id]);
+    return result ?? null; 
+}
 
 
 
