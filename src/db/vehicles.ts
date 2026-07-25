@@ -52,6 +52,9 @@ export function getVehicleByid(id: string, newKm: number):Vehicle | null {
     return result ?? null; 
 }
 
-
+//mettre a jour le kilometrage d'un vehicule 
+export function updateVehicleKM(id: string, newKm: number) : void {
+    db.runSync('UPDATE vehicles SET current_km = ? WHERE id = ?', [newKm, id]);
+}
 
 
