@@ -62,5 +62,6 @@ export function deleteVehicle(id: string): void {
     db.runSync('DELETE FROM vehicles WHERE id = ?', [id]);
 }
 
+// Modifier les information d'un vehicule 
 
 
