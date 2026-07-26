@@ -63,5 +63,13 @@ export function deleteVehicle(id: string): void {
 }
 
 // Modifier les information d'un vehicule 
+export function  updateVehicule(id: string, data: Partial<0mit<Vehicle, 'id' | 'creates_at'>>): void {
+    const fields = Objecct.keys(data); 
+    if(fields.length === 0) return;
 
+    const setClasue = fields.map((f) => `${f} = ?`).join(', ');
+    const values = fields.map((f) => (data as any)[f]);
+
+    db.runSync(`UPDATE vehicles SET ${setClasue} WHERE id = ?`, [...values, id]);
+}
 
