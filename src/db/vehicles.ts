@@ -58,4 +58,9 @@ export function updateVehicleKM(id: string, newKm: number) : void {
 }
 
 // supprimer un vehicule
+export function deleteVehicle(id: string): void {
+    db.runSync('DELETE FROM vehicles WHERE id = ?', [id]);
+}
+
+
 
