@@ -12,3 +12,7 @@ export interface MaintenanceType {
     is_costum: number;
 }
 
+function generateId(): string {
+    return Date.now().tostring(36) + Math.random().toString(36).substring(2, 9);
+}
+
