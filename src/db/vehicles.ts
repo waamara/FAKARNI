@@ -33,8 +33,7 @@ export function createVehicle(data: {
     };
 
     db.runSync(
-        `INSERT INTO vehicles (id, name, brand, model, year, current_km, created_at)
-     VALUES (?, ?, ?, ?, ?, ?, ?)`,
+        `INSERT INTO vehicles (id, name, brand, model, year, current_km, created_at)  VALUES (?, ?, ?, ?, ?, ?, ?)`,
         [vehicle.id, vehicle.name, vehicle.brand ?? null, vehicle.model ?? null, vehicle.year ?? null, vehicle.current_km, vehicle.created_at]
     );
 
