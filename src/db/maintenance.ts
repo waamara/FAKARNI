@@ -73,6 +73,13 @@ export function recordMaintenance(data: {
 }): void {
     const serivceDate = new Date().toISOString(); 
 
-    //
+    //Ajouter a l'historique
+    db.runSync(
+        `INSERT INTO maintenance_history (id, vehicle_id, maintenance_type_id, km_at_service, service_date, notes, cost
+        VALUES (?, ?, ?, ?, ?, ?, ?)`,
+        [generateId(), data.vehicle_id, data.maintenance_type_id, data.km_at_service, serviceDate, data.notes ?? null, data.cost ?? null]
+    ); 
+
+    
 }
 
