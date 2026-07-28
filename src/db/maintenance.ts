@@ -56,4 +56,11 @@ export function createMaintenanceType(data: {
 } 
 
 //recuperer tous les types d'entretien d'un vehicule 
+export function getMaintenanceTypesByVehicle(vehicleId: string): MaintenanceType[] {
+    return db.getAllAsync<MaintenanceType>(
+        'SELECT * FROM maintenance_types WHERE vehicle_id=?', 
+        [vehicleId]  
+    );
+}
+
 
