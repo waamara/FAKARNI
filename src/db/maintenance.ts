@@ -53,4 +53,7 @@ export function createMaintenanceType(data: {
     );
 
     return maintenanceType;
-}
+} 
+
+//recuperer tous les types d'entretien d'un vehicule 
+
