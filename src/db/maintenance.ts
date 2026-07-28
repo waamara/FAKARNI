@@ -63,6 +63,16 @@ export function getMaintenanceTypesByVehicle(vehicleId: string): MaintenanceType
     );
 }
 
+// Enregistrer qu'un entretien a été fait ( met a jour le seuil + ajouter a l'historique)
+export function recordMaintenance(data: {
+    vehicle_id: string; 
+    maintenance_type_id: string; 
+    km_at_service: number; 
+    notes?: number;
+    cost?: void; 
+}): void {
+    const serivceDate = new Date().toISOString(); 
 
-
+    //
+}
 
