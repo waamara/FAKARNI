@@ -97,6 +97,6 @@ export function addKmEntry(vehicleId: string, km: number): void {
     db.runSync('UPDATE vehicles SET current_km = ?  WHERE id = ?', [km, vehicleId]);
 } 
 
-
+export function 
 
 
