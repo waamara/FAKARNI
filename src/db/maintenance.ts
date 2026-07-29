@@ -89,6 +89,13 @@ export function deleteMaintenanceType(id: string) : void {
     db.runSync('DELETE FROM maintenance_types WHERE id=?', [id]); 
 }
 
+export function addKmEntry(vehicleId: string, km: number): void {
+    db.runSync(
+        'INSERT INTO km_history (id, vehicle_id, km, recorded_at) VALUES (?, ?, ?, ?)', 
+        [generateId(), vehicleId, km, new Date().toISOString()]
+    );
+    db.runSync('UPDATE vehicles SET current_km = ?  WHERE id = ?', [km, vehicleId]);
+} 
 
 
 
