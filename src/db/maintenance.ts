@@ -85,7 +85,7 @@ export function recordMaintenance(data: {
     );
 } 
 
-export function deleyeMaintenanceType(id: string) : void {
+export function deleteMaintenanceType(id: string) : void {
     db.runSync('DELETE FROM maintenance_types WHERE id=?', [id]); 
 }
 
