@@ -83,7 +83,13 @@ export function recordMaintenance(data: {
     'UPDATE maintenance_types SET last_service_km = ?, last_service_date = ? WHERE id = ?',
     [data.km_at_service, serviceDate, data.maintenance_type_id]
     );
+} 
+
+export function deleyeMaintenanceType(id: string) : void {
+    db.runSync('DELETE FROM maintenance_types WHERE id=?', [id]); 
 }
+
+
 
 
 
