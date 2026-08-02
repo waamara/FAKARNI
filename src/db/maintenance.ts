@@ -38,7 +38,7 @@ export function createMaintenanceType(data: {
 
     db.runSync(
         `INSERT INTO maintenance_types (id, vehicle_id, name, icon, interval_km, alert_before_km, last_service_km, last_service_date, is_custom)
-     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
         [
             maintenanceType.id,
             maintenanceType.vehicle_id,
@@ -104,4 +104,3 @@ export function getKmHistory(vehicleId: string) {
 }
 
 
-//initial
