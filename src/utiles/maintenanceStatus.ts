@@ -6,4 +6,8 @@ export interface MaintenanceStatusResult {
     status: MaintenanceStatus;
     KmRemaining: number; 
     nextServiceKm: number; 
+} 
+
+export function getMaintenanceStatus {
+    
 }
