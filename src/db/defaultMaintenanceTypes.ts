@@ -8,4 +8,8 @@ const DEFAULT_TYPES = [
     { name: 'Courroie' , icon: 'belt' , interval_km:60000 },
 ]
 
-
+export function createDefaultmaintenanceTypes(vehicleId: string): void {
+    for (const type of DEFAULT_TYPES) {
+        
+    }
+}
