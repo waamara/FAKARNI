@@ -10,6 +10,12 @@ const DEFAULT_TYPES = [
 
 export function createDefaultmaintenanceTypes(vehicleId: string): void {
     for (const type of DEFAULT_TYPES) {
-        
+        createMaintenanceType({
+            vehicle_id: vehicleId, 
+            name: type.name, 
+            icon: type.icon, 
+            interval_km: type.interval_km,
+            is_custom: false,
+        });
     }
 }
