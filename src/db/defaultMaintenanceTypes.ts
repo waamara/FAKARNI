@@ -19,3 +19,5 @@ export function createDefaultmaintenanceTypes(vehicleId: string): void {
         });
     }
 }
+
+
